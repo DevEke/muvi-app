@@ -32,6 +32,8 @@ class GenreView extends Component {
                         return (
                                 <MovieCard className="moviecard" key={movie._id}  movie={movie}/>
                         )
+                    } else {
+                        return null
                     }
                 })}
                 </div>
