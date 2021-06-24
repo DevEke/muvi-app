@@ -2,8 +2,6 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './movieview.scss';
-import back from '../../img/back.svg';
-import heart from '../../img/heart.svg';
 import {IoArrowBack, IoHeartOutline } from 'react-icons/io5';
 import axios from 'axios';
 

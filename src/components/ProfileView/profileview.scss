@@ -58,8 +58,9 @@
     @include flex-row-standard;
     height: 50px;
     background-color: transparent;
-    img {
+    .icon {
         margin-right: 16px;
+        font-size: 20px;
     }
     
     text-transform: uppercase;
@@ -80,8 +81,9 @@ h1 {
     @include flex-row-standard;
     background-color: transparent;
     height: 50px;
-    img {
+    .icon {
         margin-right: 16px;
+        font-size: 20px;
     }
     text-transform: uppercase;
 
@@ -95,8 +97,9 @@ h1 {
     @include flex-row-standard;
     background-color: transparent;
     height: 50px;
-    img {
+    .icon {
         margin-right: 16px;
+        font-size: 20px;
     }
     text-transform: uppercase;
 
@@ -128,6 +131,7 @@ h1 {
     font-weight: 400;
     margin-top: 50px;
     font-family: $primary-font;
+    color: white;
 }
 
 .remove-favorite-btn {

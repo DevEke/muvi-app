@@ -3,10 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './profileview.scss';
-import back from '../../img/back.svg';
-import update from '../../img/update-account.svg';
-import remove from '../../img/delete-account.svg';
-import close from '../../img/close.svg';
+import { IoArrowBack, IoCreateOutline, IoTrashOutline, IoCloseOutline} from 'react-icons/io5';
 import '../MovieCard/moviecard.scss';
 
 class ProfileView extends Component {
@@ -89,19 +86,19 @@ class ProfileView extends Component {
                 <div className="profile-info">
                     <Link className="flex-start-btn" to="/">
                         <button className="profile-view-back-btn">
-                            <img src={back} alt="back icon"/>
+                            <IoArrowBack className="icon"/>
                             <p>Back</p>
                         </button>
                     </Link>
                     <div className="profile-btns">
                         <Link style={{textDecoration: "none"}}to={`/update/${username}`}>
                             <button className="profile-update-account-btn" type="button">
-                                <img src={update}/>
+                                <IoCreateOutline className="icon"/>
                                 <p>Edit Account</p>
                             </button>
                         </Link>
                         <button className="delete-account-btn" onClick={() => this.unRegister()}>
-                            <img src={remove}/>
+                            <IoTrashOutline className="icon"/>
                             <p>Delete Account</p>
                         </button>
                     </div>
@@ -113,9 +110,9 @@ class ProfileView extends Component {
                         return (
                             <div key={movie._id} className="movie-card">
                                 <button onClick={() => this.removeFavorite(movie)} className="remove-favorite-btn">
-                                    <img src={close}/>
+                                    <IoCloseOutline className="icon"/>
                                 </button>
-                                <img className="img-sizer" src={movie.ImageURL} />
+                                <img alt={`${movie.Title}`} className="img-sizer" src={movie.ImageURL} />
                                 <div className="movie-overlay">
                                     <h2 className="movie-card-title">{movie.Title}</h2>
                                     <p className="movie-card-genre">{new Date(movie.ReleaseDate).getFullYear()} - {movie.Genre.Name}</p>
