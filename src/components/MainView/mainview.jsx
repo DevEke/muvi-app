@@ -12,13 +12,15 @@ import DirectorView from '../DirectorView/directorview';
 import GenreView from '../GenreView/genreview';
 import ProfileView from '../ProfileView/profileview';
 import UpdateView from '../UpdateView/updateview';
-import {IoPersonCircleOutline } from 'react-icons/io5';
+import { IoPersonCircleOutline } from 'react-icons/io5';
 import logo from '../../img/logo.svg';
 import './mainview.scss';
 
 
 
 class MainView extends Component {
+
+    // When component mounts, identifies the user with the access token from the local storage and retrieves movies if it is valid
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
@@ -27,6 +29,7 @@ class MainView extends Component {
         }
     }
 
+    // When the user is logged in, set the user in state, then set the local storage with their information and retrieves the movies from the database
     onLoggedIn(authData) {
         console.log(authData);
         this.props.setUser(authData.user.Username);
@@ -35,6 +38,7 @@ class MainView extends Component {
         this.getMovies(authData.token);
     }
 
+    // Gets the movies from the database, and sets the movies
     getMovies(token) {
         axios.get('https://muvi-app.herokuapp.com/movies', {
             headers: {Authorization: `Bearer ${token}`}
@@ -47,6 +51,7 @@ class MainView extends Component {
         });
     }
 
+    // When the user signs out, clears local storage and removes user from state
     onSignOut() {
         localStorage.clear();
         this.props.setUser(null);
