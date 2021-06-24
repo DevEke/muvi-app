@@ -20,10 +20,6 @@ import './mainview.scss';
 
 
 class MainView extends Component {
-    constructor() {
-        super();
-    }
-
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken !== null) {
