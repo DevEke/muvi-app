@@ -1,0 +1,201 @@
+@import '../../root.scss';
+
+.profile-container {
+    display: flex;
+    width: 100vw;
+    min-height: 100vh;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 70px 165px 20px;
+}
+
+.profile-btns {
+    display: flex;
+}
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        margin: 0 0 18px 0;
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: 14px;
+        text-transform: uppercase;
+
+    }
+
+    p {
+        margin: 0;
+        font-family: $primary-font;
+        font-weight: 400;
+        font-size: 24px;
+    }
+}
+
+.flex-start-btn {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    left: 165px;
+    text-decoration: none;
+
+    p {
+        margin: 0;
+    }
+}
+
+
+.profile-view-back-btn {
+    @include lg-btn();
+    @include flex-row-standard;
+    height: 50px;
+    background-color: transparent;
+    img {
+        margin-right: 16px;
+    }
+    
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $accent-dark-color;
+    }
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-update-account-btn {
+    @include lg-btn();
+    @include flex-row-standard;
+    background-color: transparent;
+    height: 50px;
+    img {
+        margin-right: 16px;
+    }
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $accent-dark-color;
+    }
+}
+
+.delete-account-btn {
+    @include lg-btn();
+    @include flex-row-standard;
+    background-color: transparent;
+    height: 50px;
+    img {
+        margin-right: 16px;
+    }
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $error-color;
+    }
+}
+
+.favorite-movie-container {
+    padding: 0 165px 50px;
+
+    .movie-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        padding-bottom: 70px;
+
+        .movie-card-genre {
+            margin: 0;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.favorite-movie-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top: 50px;
+    font-family: $primary-font;
+}
+
+.remove-favorite-btn {
+    @include lg-btn();
+    position: absolute;
+    top: 0;
+    padding: 8px;
+    right: 0;
+    z-index: 800;
+    transition: background-color 0.3s;
+    background-color: rgba(25,31,36,.7);
+
+    &:hover {
+        background-color: $error-color;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .profile-container {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .profile-info {
+        width: 100vw;
+        margin-top: 80px;
+    }
+
+    .flex-start-btn {
+        top: -80px;
+    }
+
+    .favorite-movie-title {
+        text-align: center;
+    }  
+}
+
+@media (hover: none) {
+    .remove-favorite-btn {
+        background-color: $error-color;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .profile-info {
+        padding: 50px 20px 20px;
+        justify-content: center;
+    }
+
+    .flex-start-btn {
+        top: 60px;
+        left: 0;
+        padding: 0;
+    }
+
+    .profile-btns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .favorite-movie-container {
+        padding: 0 20px 0px;
+        margin-top: 20px;
+    
+        .movie-grid {
+            justify-content: center;
+            padding-bottom: 60px;
+
+        }
+    }
+}

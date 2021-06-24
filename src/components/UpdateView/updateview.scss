@@ -1,0 +1,90 @@
+@import '../../root.scss';
+
+.update-account-container {
+    width: 100vw;
+    height: 100vh;
+    @include flex-column-standard();
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    @include flex-column-standard();
+    margin: 0;
+    min-width: 300px;
+
+    p {
+        font-family: $primary-font;
+        color: white;
+        margin: 32px 0;
+        @include sm-text;
+        font-size: 18px;
+    }
+
+    .input__container {
+        position: relative;
+
+        .label {
+            @include sr-only;
+        }
+
+        .validation-error {
+            @include error;
+        }
+
+        input {
+            @include input()
+        }
+    }
+}
+
+
+
+.update-account-btn {
+    @include lg-btn();
+    background-color: transparent;
+    margin: 0 0 16px 0;
+    height: 50px;
+    padding-right: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-end;
+
+    &:hover {
+        background-color: $accent-dark-color;
+        padding-right: 48px;
+
+    }
+
+    &:hover + img {
+        opacity: 1;
+    }
+}
+
+.cancel-update-btn {
+    @include lg-btn();
+    background-color: transparent;
+    margin: 0 0 16px 0;
+    padding: 0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    form {
+        margin: 50px 0;
+    }
+}
+
+@media (hover: none) {
+    .update-account-btn {
+        background-color: $accent-dark-color;
+        padding-right: 48px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    
+}

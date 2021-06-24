@@ -1,0 +1,84 @@
+@import '../../root.scss';
+
+
+.login-container {
+    @include flex-column-standard();
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    background-color: $background-color;
+    color: white;
+    font-family: $primary-font;
+    height: 100vh;
+}
+
+
+.login-form {
+    @include flex-column-standard();
+    min-width: 300px;
+    margin: 0;
+
+    p {
+        font-family: $primary-font;
+        color: white;
+        margin: 32px 0;
+        @include sm-text;
+        font-size: 18px;
+    }
+
+    .input__container {
+        position: relative;
+
+        .validation-error {
+            @include error;
+        }
+
+        input {
+            @include input()
+            }
+        }
+    }
+
+    
+
+
+.login-login-btn {
+    @include lg-btn();
+    background-color: transparent;
+    margin: 0 0 16px 0;
+    height: 50px;
+    padding-right: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    align-self: flex-end;
+
+    &:hover {
+        background-color: $accent-dark-color;
+        padding-right: 48px;
+
+    }
+
+    &:hover + img {
+        opacity: 1;
+    }
+}
+
+
+
+.login-register-btn {
+    @include lg-btn();
+    background-color: transparent;
+    margin: 0 0 16px 0;
+    padding: 0;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (hover: none) {
+    .login-login-btn {
+        background-color: $accent-dark-color;
+        padding-right: 48px;
+    }
+}

@@ -1,0 +1,83 @@
+@import '../../root.scss';
+
+.movie-card-link {
+    text-decoration: none;
+}
+
+.movie-card {
+    margin: 10px;
+    width: 300px;
+    height: 441.76px;
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 5px 10px 5px $accent-dark-color;
+    }
+
+    &:hover .movie-overlay {
+        opacity: 1;
+    }
+}
+
+.img-sizer {
+    width: 300px;
+    height: auto;
+}
+
+.movie-overlay {
+    opacity: 0;
+    box-sizing: border-box;
+    background-color: $accent-dark-color;
+    color: white;
+    transition: opacity 0.3s, box-shadow 0.3s;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: -10px;
+    z-index: 555;
+    padding: 15px 30px 20px;
+}
+
+.movie-card-title {
+    font-family: $primary-font;
+    font-size: 30px;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: initial;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.movie-card-director {
+    margin: 0;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+
+@media (hover: none) {
+
+    .movie-card {
+        box-shadow: 0 5px 10px 5px $accent-dark-color;
+
+    }
+    .movie-overlay {
+        opacity: 1;
+        background-color: $background-color;
+        
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .movie-card {
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .movie-card {
+        margin-bottom: 30px;
+    }
+}

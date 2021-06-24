@@ -1,0 +1,204 @@
+@import '../../root.scss';
+
+.director-view-container {
+    box-sizing: border-box;
+    @include flex-column-standard();
+    align-items: flex-start;
+    width: 100vw;
+    font-family: $primary-font;
+}
+.director-view {
+    @include flex-row-standard();
+    padding: 180px 165px 50px;
+}
+.director-view-flex-start-btn {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    left: 165px;
+    text-decoration: none;
+
+    p {
+        margin: 0;
+    }
+}
+
+.director-view-back-btn {
+    @include lg-btn();
+    @include flex-row-standard;
+    height: 50px;
+    background-color: transparent;
+    img {
+        margin-right: 16px;
+    }
+    
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $accent-dark-color;
+    }
+}
+
+.director-image {
+    height: 400px;
+    width: auto;
+    align-self: flex-start;
+    border-bottom: 2px solid $primary-color;
+
+}
+
+.director-container {
+    padding: 0 50px;
+    align-self: flex-start; 
+}
+
+.director-view-director {
+    font-weight: 700;
+    font-size: 48px;
+    margin: 0;
+    font-family: $primary-font;
+}
+
+.director-view-birthday {
+    color: $primary-color;
+    font-size: 18px;
+    text-transform: uppercase; 
+}
+
+.director-view-bio {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.director-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 165px;
+    font-weight: 400;
+    margin-top: 50px;
+    font-family: $primary-font;
+}
+.director-view-movies-flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 150px;
+    padding-bottom: 70px;
+}
+
+// @media only screen and (max-width: 1024px) {
+
+//     .director-view {
+//         @include flex-column-standard();
+//         justify-content: center;
+//         align-items: center;
+//     }
+//     .director-image {
+//         margin: 0 auto;
+//         height: 300px;
+//         width: 300px;
+//     }
+//     .director-container {
+//         text-align: center;
+//         padding: 0;
+//     }
+//     .director-view-bio {
+//         margin: 20px auto;
+//     }
+//     .director-title { 
+//         padding: 0;
+//         text-align: center;
+//     }
+
+//     .director-view-movies-flex {
+//         padding: 0;
+//         justify-content: center;
+//     }
+//     .director-view-director {
+//         margin: 10px 0;
+//     }
+// }
+
+@media only screen and (max-width: 768px) {
+    .director-view {
+        padding: 130px 50px 20px;
+        @include flex-column-standard();
+        justify-content: center;
+        align-items: center;
+    }
+
+    .director-view-flex-start-btn {
+        top: 60px;
+        left: 40px;
+        padding: 0;
+    }
+
+    .director-image {
+         margin: 0 auto;
+    }
+
+    .director-container {
+        text-align: center;
+        padding: 0;
+    }
+
+    .director-view-movies-flex {
+        padding: 0;
+        margin: 0 auto;
+        justify-content: center;
+        padding-bottom: 60px;
+    }
+
+    .director-title { 
+        padding: 0;
+        margin: 50px auto 15px;
+        text-align: center;
+    }
+
+    .director-image {
+        height: 400px;
+        width: auto;
+    }
+
+    .director-view-director {
+        font-size: 48px;
+        margin: 24px 0 8px;
+    }
+
+}
+
+@media only screen and (max-width: 425px) {
+    .director-view {
+        padding: 120px 20px 20px;
+    }
+
+    .director-view-flex-start-btn {
+        top: 60px;
+        left: 0;
+        padding: 0;
+    }
+
+    .director-image {
+        height: auto;
+        width: 300px;
+    }
+
+    .director-view-director {
+        font-size: 32px;
+        margin: 24px 0 8px;
+    }
+
+    .director-view-bio {
+        font-size: 18px;
+    }
+
+    .director-title {
+        margin: 50px auto 15px;
+    }
+
+
+    .director-view-movies-flex {
+        padding-bottom: 60px;
+    }
+
+
+}

@@ -1,0 +1,155 @@
+@import '../../root.scss';
+
+.genre-container {
+    height: 100%;
+}
+
+.genre-view {
+    display: flex;
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+     
+}
+
+.genre-flex-start-btn {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    left: 165px;
+    text-decoration: none;
+
+    p {
+        margin: 0;
+    }
+}
+
+.genre-info-container {
+    padding: 80px 165px;
+}
+
+.genre-view-name {
+    font-weight: 700;
+    font-size: 48px;
+    font-family: $primary-font;
+}
+
+
+.genre-view-description {
+    font-size: 24px;
+    width: 90%;
+    margin-top: 20px; 
+}
+
+
+.genre-movies-flex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 165px 70px;
+}
+
+.genre-view-back-btn {
+    @include lg-btn();
+    @include flex-row-standard;
+    height: 50px;
+    background-color: transparent;
+    img {
+        margin-right: 16px;
+    }
+    
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $accent-dark-color;
+    }
+}
+
+.genre-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    padding-left: 165px;
+    font-weight: 400;
+    margin-top: 50px;
+    font-family: $primary-font;
+}
+
+@media only screen and (max-width: 1024px) {
+    .genre-view {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin: 0;       
+    }
+
+    .genre-flex-start-btn {
+        padding-left: 20px;
+    }
+        
+    .genre-info-container {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .genre-view-description {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .genre-movies-flex {
+        justify-content: center;
+    }
+
+    .genre-title {
+        padding: 0;
+        text-align: center;
+    }
+
+    .genre-movies-flex {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+    .genre-flex-start-btn {
+        top: 60px;
+        left: 0;
+        padding: 0;
+    }
+
+    .genre-info-container {
+        padding: 100px 20px 20px;
+    }
+
+    .genre-view-name {
+        font-size: 32px;
+    }
+
+    .genre-view-description {
+        margin: 0 auto;
+        font-size: 18px;
+    }
+
+    .genre-movies-flex {
+        padding-bottom: 60px;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .genre-flex-start-btn {
+        top: 60px;
+        left: 40px;
+        padding: 0;
+    }
+
+    .genre-info-container {
+        padding: 100px 20px 20px;
+    }
+
+    .genre-movies-flex {
+        padding-bottom: 60px;
+    }
+
+}
