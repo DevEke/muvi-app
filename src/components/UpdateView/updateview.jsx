@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './updateview.scss';
-import check from '../../img/check.svg';
-import notice from '../../img/alert.svg';
+import {IoAlertOutline, IoCheckmarkOutline } from 'react-icons/io5';
 
 function UpdateView(props) {
     const [username, changeUsername] = useState('');
@@ -71,7 +70,7 @@ function UpdateView(props) {
                     {Object.keys(usernameValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertOutline className="icon"/>
                                 <p>{usernameValidation[key]}</p>
                             </div>
                         );
@@ -83,7 +82,7 @@ function UpdateView(props) {
                     {Object.keys(passwordValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertOutline className="icon"/>
                                 <p>{passwordValidation[key]}</p>
                             </div>
                         );
@@ -95,7 +94,7 @@ function UpdateView(props) {
                     {Object.keys(emailValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertOutline className="icon"/>
                                 <p>{emailValidation[key]}</p>
                             </div>
                         );
@@ -103,7 +102,7 @@ function UpdateView(props) {
                 </div>
                 <div className="aligner">
                     <button className="update-account-btn" type="button" onClick={updateAccount}>Accept Changes</button>
-                    <img src={check} />
+                    <IoCheckmarkOutline className="icon"/>
                 </div>
                 <Link className="aligner" to="/users/:userId"><button  className="cancel-update-btn">Cancel Update</button></Link>
             </form>
