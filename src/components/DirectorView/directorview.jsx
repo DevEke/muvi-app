@@ -6,9 +6,6 @@ import back from '../../img/back.svg';
 import MovieCard from '../MovieCard/moviecard';
 
 class DirectorView extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
         const { movies, director } = this.props;
