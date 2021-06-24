@@ -8,10 +8,12 @@
     top: 0;
     right: calc(50% - 250px);
 
-    img {
+    .icon {
         position: absolute;
         left: 20px;
         top: 15px;
+        color: white;
+        font-size: 20px;
     }
 
     .search-input {

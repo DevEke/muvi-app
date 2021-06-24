@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { setFilter } from '../../actions/actions';
-import search from '../../img/search.svg';
+import { IoSearch } from 'react-icons/io5';
 import './moviesearch.scss';
 
 function MovieSearch(props) {
     return (
         <div className="search__container">
-            <img src={search}/>
+            <IoSearch className="icon"/>
             <input
                 className="search-input"
                 type="text"
