@@ -9,7 +9,7 @@ class MovieCard extends Component {
         return (
             <Link className="movie-card-link" to={`/movies/${movie._id}`}>
                 <div className="movie-card">
-                    <img className="img-sizer" src={movie.ImageURL} />
+                    <img alt={`${movie.title}`} className="img-sizer" src={movie.ImageURL} />
                     <div className="movie-overlay">
                         <h1 className="movie-card-title">{movie.Title}</h1>
                         <p className="movie-card-director">{new Date(movie.ReleaseDate).getFullYear()} - {movie.Genre.Name}</p>
