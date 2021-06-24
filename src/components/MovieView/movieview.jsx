@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './movieview.scss';
 import back from '../../img/back.svg';
 import heart from '../../img/heart.svg';
+import {IoArrowBack, IoHeartOutline } from 'react-icons/io5';
 import axios from 'axios';
 
 
@@ -34,7 +35,7 @@ class MovieView extends Component {
                 <div className="movie__info-container">
                     <Link to="/" className="movie-view-flex-start-btn">
                         <button className="movie-view-back-btn">
-                            <img src={back} alt="back icon"/>
+                            <IoArrowBack className="icon"/>
                             <p>back</p>
                         </button>
                     </Link>
@@ -44,7 +45,7 @@ class MovieView extends Component {
                         <Link to={`/directors/${movie.Director.Name}`} className="text-link"><h2 className="movie-view-director">{movie.Director.Name}</h2></Link>
                         <p className="movie-view-description">{movie.Description}</p>
                         <button onClick={() => this.addtoFavorites(movie)} className="favorite-btn">
-                            <img src={heart} alt="fav icon"/>
+                            <IoHeartOutline className="icon"/>
                             <p>Add to favorites</p>
                         </button>
                     </div>
