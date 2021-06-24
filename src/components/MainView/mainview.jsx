@@ -12,13 +12,26 @@ import DirectorView from '../DirectorView/directorview';
 import GenreView from '../GenreView/genreview';
 import ProfileView from '../ProfileView/profileview';
 import UpdateView from '../UpdateView/updateview';
-import { IoPersonCircleOutline } from 'react-icons/io5';
+import { IoPersonCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
 import logo from '../../img/logo.svg';
 import './mainview.scss';
 
 
 
 class MainView extends Component {
+    constructor() {
+        super();
+
+        this.state = {
+            alertMessage: ''
+        }
+    }
+
+    setAlert(x) {
+        this.setState({
+            alertMessage: x
+        })
+    }
 
     // When component mounts, identifies the user with the access token from the local storage and retrieves movies if it is valid
     componentDidMount() {
@@ -59,11 +72,19 @@ class MainView extends Component {
 
     render() {
         const { movie, movies, user } = this.props;
+        const { alertMessage } = this.state;
 
 
         return (
             <Router>
-                <div className="main-view">            
+                <div className="main-view">
+                    {alertMessage !== "" ? 
+                    <div onClick={() => this.setAlert('')} className="alert-modal">
+                        <p>{alertMessage}</p>
+                        <IoAlertCircleOutline className="icon"/>
+                    </div> : 
+                    null
+                    }            
                     <div className="nav">
                         <img src={logo} alt="site logo"/>
                         <div className="nav-button-flex"> 
@@ -81,7 +102,7 @@ class MainView extends Component {
                             return <MoviesList movies={movies}/>;
                             }
                         }/>
-                        <Route path="/movies/:movieId" render={({match}) => <MovieView movie={movies.find(movie => movie._id === match.params.movieId)}/>}/>
+                        <Route path="/movies/:movieId" render={({match}) => <MovieView alert={x => this.setAlert(x)} movie={movies.find(movie => movie._id === match.params.movieId)}/>}/>
                         <Route path="/register" render={() => <RegisterView onLoggedIn={user => this.onLoggedIn(user)} />}/>
                         <Route path="/directors/:name" render={({match}) => { 
                             if (!movies) return <div className="main-view"/>;
@@ -92,7 +113,7 @@ class MainView extends Component {
                             return <GenreView genre={movies.find(movie => movie.Genre.Name === match.params.name)} movies={movies}/>}}
                         />
                         <Route path="/users/:userId" render={() => {
-                            return <ProfileView movies={movies} movie={movie}/>}}
+                            return <ProfileView alert={x => this.setAlert(x)} movies={movies} movie={movie}/>}}
                         />
                         <Route path="/update/:userId" render={() => {
                             return <UpdateView/>}}

@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import './profileview.scss';
-import { IoArrowBack, IoCreateOutline, IoTrashOutline, IoCloseOutline} from 'react-icons/io5';
+import { IoArrowBack, IoCreateOutline, IoTrashOutline, IoClose } from 'react-icons/io5';
 import '../MovieCard/moviecard.scss';
 
 class ProfileView extends Component {
@@ -51,9 +51,11 @@ class ProfileView extends Component {
         }).then((response) => {
             localStorage.clear();
             window.location.pathname = "/";
-            alert("Account successfully unregistered. Returning to Login Screen.");
+            this.props.alert("Account successfully unregistered. Returning to Login Screen.");
+            // alert("Account successfully unregistered. Returning to Login Screen.");
         }).catch((error) => {
-            console.log("Account could not be deleted")
+            // console.log("Account could not be deleted");
+            this.props.alert("Account could not be deleted");
         });
     }
 
@@ -70,10 +72,12 @@ class ProfileView extends Component {
                 favoriteMovies: data.FavoriteMovies
             });
             console.log(this.state.favoriteMovies);
-            alert("Movie successfully removed from favorites list.");
+            // alert("Movie successfully removed from favorites list.");
+            this.props.alert("Movie successfully removed from favorites list.");
             this.componentDidMount();
         }).catch((error) => {
-            console.log('Error removing movie from favorites');
+            // console.log('Error removing movie from favorites');
+            this.props.alert("Error removing movie from favorite.");
         });
     }
     
@@ -114,7 +118,7 @@ class ProfileView extends Component {
                         return (
                             <div key={movie._id} className="movie-card">
                                 <button onClick={() => this.removeFavorite(movie)} className="remove-favorite-btn">
-                                    <IoCloseOutline className="icon"/>
+                                    <IoClose className="icon"/>
                                 </button>
                                 <img alt={`${movie.Title}`} className="img-sizer" src={movie.ImageURL} />
                                 <div className="movie-overlay">

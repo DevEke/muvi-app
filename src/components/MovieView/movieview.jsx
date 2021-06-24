@@ -16,9 +16,9 @@ class MovieView extends Component {
             headers: {Authorization: `Bearer ${token}`},
         }).then((response) => {
             console.log(response);
-            alert("Movie added to favorites. Check your profile.")
+            this.props.alert("Movie added to favorites!");
         }).catch((error) => {
-            console.log('Error Adding movie to favorites.')
+            this.props.alert("Sorry, We couldnt add your movie");
         });
     }
 

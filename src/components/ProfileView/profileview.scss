@@ -137,12 +137,18 @@ h1 {
 .remove-favorite-btn {
     @include lg-btn();
     position: absolute;
+    padding: 0;
+    padding: 4px 6px;
+    font-size: inherit;
     top: 0;
-    padding: 8px;
     right: 0;
     z-index: 800;
     transition: background-color 0.3s;
     background-color: rgba(25,31,36,.7);
+
+    .icon {
+        font-size: 20px;
+    }
 
     &:hover {
         background-color: $error-color;
