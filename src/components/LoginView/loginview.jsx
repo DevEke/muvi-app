@@ -3,8 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import './loginview.scss';
 import { Link } from 'react-router-dom';
-import notice from '../../img/alert.svg';
-import arrow from '../../img/arrow.svg';
+import { IoArrowForward, IoAlertCircleOutline} from 'react-icons/io5';
 
 function LoginView(props) {
     const [ username, setUsername ] = useState('');
@@ -67,7 +66,7 @@ function LoginView(props) {
                     {Object.keys(usernameValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertCircleOutline className="icon"/>
                                 <p>{usernameValidation[key]}</p>
                             </div>
                         );
@@ -86,7 +85,7 @@ function LoginView(props) {
                     {Object.keys(passwordValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertCircleOutline className="icon"/>
                                 <p>{passwordValidation[key]}</p>
                             </div>
                         );
@@ -94,7 +93,7 @@ function LoginView(props) {
                     </div>
                     <div className="aligner">
                         <button className="login-login-btn" type="button" onClick={attemptLogin}>Sign In</button>
-                        <img src={arrow}/>
+                        <IoArrowForward className="icon"/>
                     </div>
                     <Link className="aligner" to="/register"><button className="login-register-btn" type="button">Dont have an account?</button></Link>
                 </form>

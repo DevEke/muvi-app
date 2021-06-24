@@ -4,10 +4,8 @@ import { connect } from 'react-redux';
 import { setUser } from '../../actions/actions';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import logo from '../../img/logo.svg';
-import arrow from '../../img/arrow.svg';
+import {IoArrowForward, IoAlertCircleOutline} from 'react-icons/io5';
 import './registerview.scss';
-import notice from '../../img/alert.svg';
 
 function RegisterView(props) {
     const [ username, setUsername ] = useState('');
@@ -19,7 +17,7 @@ function RegisterView(props) {
 
     const attemptRegister = (e) => {
         e.preventDefault();
-        const isValid = registerValidation();
+        registerValidation();
         console.log(username, password, email);
         axios.post('https://muvi-app.herokuapp.com/users', {
             Username: username,
@@ -88,7 +86,7 @@ function RegisterView(props) {
                     {Object.keys(usernameValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertCircleOutline className="icon"/>
                                 <p>{usernameValidation[key]}</p>
                             </div>
                         );
@@ -100,7 +98,7 @@ function RegisterView(props) {
                     {Object.keys(passwordValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertCircleOutline className="icon"/>
                                 <p>{passwordValidation[key]}</p>
                             </div>
                         );
@@ -112,7 +110,7 @@ function RegisterView(props) {
                     {Object.keys(emailValidation).map((key) => {
                         return (
                             <div className="validation-error" key={key}>
-                                <img src={notice}/>
+                                <IoAlertCircleOutline className="icon"/>
                                 <p>{emailValidation[key]}</p>
                             </div>
                         );
@@ -120,7 +118,7 @@ function RegisterView(props) {
                     </div>
                     <div className="aligner">
                         <button className="register-register-btn" type="button" onClick={attemptRegister}>Create Account</button>
-                        <img src={arrow}/>
+                        <IoArrowForward className="icon"/>
                     </div>
                     <Link className="aligner" to="/"><button className="register-login-btn" type="button">Already have an account?</button></Link>
                 </form>

@@ -120,10 +120,12 @@ body {
       width: 300px;
     }
 
-    img {
+    .icon {
         position: absolute;
         left: 265px;
         top: 15px;
+        font-size: 20px;
+        color: $error-color;
     }
 }
 
@@ -131,8 +133,9 @@ body {
     align-self: flex-end;
     position: relative;
 
-    img {
+    .icon {
         position: absolute;
+        font-size: 20px;
         right: 14px;
         top: 15px;
         transition: opacity 0.3s;
@@ -143,7 +146,7 @@ body {
 
 @media (hover: none) {
     .aligner {
-        img {
+        .icon {
             opacity: 1;
         }
     }
