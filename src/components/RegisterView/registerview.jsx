@@ -17,9 +17,10 @@ function RegisterView(props) {
 
     const attemptRegister = (e) => {
         e.preventDefault();
-        registerValidation();
+        const isValid = registerValidation();
         console.log(username, password, email);
-        axios.post('https://muvi-app.herokuapp.com/users', {
+        if (isValid) {
+            axios.post('https://muvi-app.herokuapp.com/users', {
             Username: username,
             Password: password,
             Email: email
@@ -34,6 +35,8 @@ function RegisterView(props) {
             console.log(error);
             // console.log('Error with Registration')
         })
+        }
+        
     }
 
     // const loginUser = (data) => {

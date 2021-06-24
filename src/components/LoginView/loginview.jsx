@@ -15,9 +15,10 @@ function LoginView(props) {
 
     const attemptLogin = (e) => {
         e.preventDefault();
-        loginValidation();
+        const isValid = loginValidation();
         console.log(username, password);
-        axios.post('https://muvi-app.herokuapp.com/login', {
+        if (isValid) {
+            axios.post('https://muvi-app.herokuapp.com/login', {
             Username: username,
             Password: password
         }).then((response) => {
@@ -26,6 +27,7 @@ function LoginView(props) {
         }).catch((error) => {
             // console.log('Username or Password is incorrect.')
         })
+        } 
     };
 
 
