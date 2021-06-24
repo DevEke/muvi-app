@@ -15,6 +15,7 @@ function RegisterView(props) {
     const [ passwordValidation, checkPasswordValidation] = useState({});
     const [ emailValidation, checkEmailValidation] = useState({});
 
+    // If information entered is valid, adds an account to the user database with information entered.
     const attemptRegister = (e) => {
         e.preventDefault();
         const isValid = registerValidation();
@@ -39,19 +40,7 @@ function RegisterView(props) {
         
     }
 
-    // const loginUser = (data) => {
-    //     axios.post('https://muvi-app.herokuapp.com/login', {
-    //         Username: data.Username,
-    //         Password: data.Password,
-    //     }).then((response) => {
-    //         const data = response.data;
-    //         props.onLoggedIn(data);
-    //         window.open('/', '_self');
-    //     }).catch((error) => {
-    //         console.log(error);
-    //     });
-    // };
-
+    // Validates input
     const registerValidation = () => {
         const usernameValidation = {};
         const passwordValidation = {};
