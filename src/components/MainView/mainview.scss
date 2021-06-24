@@ -38,24 +38,17 @@
         justify-content: center;
         align-items: center;
 
+        .icon {
+            font-size: 20px;
+            color: white;
+        }
+
         &:hover {
             background-color: $accent-dark-color;
             
         }
     }
 
-    .sign-out-btn {
-        position: relative;
-        
-
-        img {
-            position: absolute;
-            right: 14px;
-            top: 12.5px;
-            transition: opacity 0.3s;
-            opacity: 0;
-        }
-    }
 }
 
 p {
