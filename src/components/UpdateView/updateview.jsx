@@ -14,7 +14,7 @@ function UpdateView(props) {
     const [emailValidation, checkEmailValidation] = useState({});
 
 
-
+    // Takes information enetered in the input and updates corresponding info in the database
     const updateAccount = (e) => {
         e.preventDefault();
         const isValid = formValidation();
@@ -36,6 +36,7 @@ function UpdateView(props) {
         }
     }
 
+    // validates the form entry
     const formValidation = () => {
         const usernameValidation = {};
         const passwordValidation = {};
