@@ -14,10 +14,12 @@ function MoviesList(props) {
     const { movies, movieFilter } = props;
     let filteredMovies = movies;
 
+    // If the search query is populated, return the filtered list of movies
     if (movieFilter !== '') {
         filteredMovies = movies.filter((movie) => movie.Title.includes(movieFilter));
     }
 
+    // If there are no movies, return null
     if (!movies) return null;
 
     return (
