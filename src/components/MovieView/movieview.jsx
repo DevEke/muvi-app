@@ -8,9 +8,6 @@ import axios from 'axios';
 
 
 class MovieView extends Component {
-    constructor() {
-        super();
-    }
 
     addtoFavorites(movie) {
         let token = localStorage.getItem('token');
