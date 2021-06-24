@@ -18,11 +18,14 @@ class ProfileView extends Component {
         }
     }
 
+
+    // When component loads, retreive user information using the access token
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         this.getUser(accessToken);
     }
 
+    // retrieves user information from the database
     getUser(token) {
         let user = localStorage.getItem("user")
         let url = "https://muvi-app.herokuapp.com/users/" + user;
@@ -38,6 +41,7 @@ class ProfileView extends Component {
         });
     }
 
+    // Removes user from the database
     unRegister() {
         let token = localStorage.getItem("token");
         let user = localStorage.getItem("user");
@@ -53,7 +57,7 @@ class ProfileView extends Component {
         });
     }
 
-
+    // Removes movie from favorite list
     removeFavorite(movie) {
         let token = localStorage.getItem('token');
         let user = localStorage.getItem('user');
