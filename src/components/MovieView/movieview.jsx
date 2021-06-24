@@ -8,6 +8,7 @@ import axios from 'axios';
 
 class MovieView extends Component {
 
+    // Adds the selected movie to users favorites list in the database
     addtoFavorites(movie) {
         let token = localStorage.getItem('token');
         let url = "https://muvi-app.herokuapp.com/users/" + localStorage.getItem('user') + "/favorites/" + movie._id;
