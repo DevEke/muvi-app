@@ -12,8 +12,7 @@ import DirectorView from '../DirectorView/directorview';
 import GenreView from '../GenreView/genreview';
 import ProfileView from '../ProfileView/profileview';
 import UpdateView from '../UpdateView/updateview';
-import profile from '../../img/user.svg';
-import out from '../../img/out.svg';
+import {IoPersonCircleOutline } from 'react-icons/io5';
 import logo from '../../img/logo.svg';
 import './mainview.scss';
 
@@ -61,14 +60,13 @@ class MainView extends Component {
             <Router>
                 <div className="main-view">            
                     <div className="nav">
-                        <img src={logo}/>
+                        <img src={logo} alt="site logo"/>
                         <div className="nav-button-flex"> 
                             <Link className="account-btn" to="/users/:userId">
-                                    <img src={profile} alt="profile icon"/>
+                                    <IoPersonCircleOutline className="icon"/>
                             </Link>
                             <Link className="sign-out-btn" to="/">
                                 <button onClick={() => this.onSignOut()} className="signout-btn">Sign Out</button>
-                                <img src={out}/>
                             </Link>
                         </div>
                     </div>
