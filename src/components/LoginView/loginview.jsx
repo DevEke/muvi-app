@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './loginview.scss';
 import { Link } from 'react-router-dom';
 import notice from '../../img/alert.svg';
-import logo from '../../img/logo.svg';
 import arrow from '../../img/arrow.svg';
 
 function LoginView(props) {
@@ -17,7 +16,7 @@ function LoginView(props) {
 
     const attemptLogin = (e) => {
         e.preventDefault();
-        const isValid = loginValidation();
+        loginValidation();
         console.log(username, password);
         axios.post('https://muvi-app.herokuapp.com/login', {
             Username: username,
