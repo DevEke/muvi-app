@@ -10,6 +10,7 @@ export const SET_USER_FAVORITES = 'SET_USER_FAVORITES';
 
 //Action Creators
 
+// Sets Movies in the state
 export const setMovies = (value) => {
     return async function(dispatch, getState) {
         dispatch({
@@ -19,6 +20,7 @@ export const setMovies = (value) => {
     }
 }
 
+// Sets filter in the search input
 export const setFilter = (value) => {
     return async function(dispatch, getState) {
         dispatch({
@@ -28,6 +30,8 @@ export const setFilter = (value) => {
     }
 }
 
+
+// Sets the user after login
 export const setUser = (value) => {
     return async function(dispatch, getState) {
         dispatch({
@@ -36,39 +40,3 @@ export const setUser = (value) => {
         })
     }
 }
-
-// export const setUserUsername = (value) => {
-//     return async function(dispatch, getState) {
-//         dispatch({
-//             type: SET_USER_USERNAME,
-//             value
-//         })
-//     }
-// }
-
-// export const setUserPassword = (value) => {
-//     return async function(dispatch, getState) {
-//         dispatch({
-//             type: SET_USER_PASSWORD,
-//             value
-//         })
-//     }
-// }
-
-// export const setUserEmail = (value) => {
-//     return async function(dispatch, getState) {
-//         dispatch({
-//             type: SET_USER_EMAIL,
-//             value
-//         })
-//     }
-// }
-
-// export const setUserFavorites = (value) => {
-//     return async function(dispatch, getState) {
-//         dispatch({
-//             type: SET_USER_FAVORITES,
-//             value
-//         })
-//     }
-// }
