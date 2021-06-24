@@ -13,6 +13,7 @@ function LoginView(props) {
     const [ errorUsername, addErrorClassUsername] = useState("false");
     const [ errorPassword, addErrorClassPassword] = useState("false");
 
+    // Verifies entered information is valid and logs the user in
     const attemptLogin = (e) => {
         e.preventDefault();
         const isValid = loginValidation();
@@ -30,7 +31,7 @@ function LoginView(props) {
         } 
     };
 
-
+    // Validates username and password values pass custom rules
     const loginValidation = () => {
         const usernameValidation = {};
         const passwordValidation = {};
