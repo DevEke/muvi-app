@@ -18,7 +18,7 @@ class DirectorView extends Component {
                             <p>Back</p>
                         </button>
                     </Link>
-                    <img className="director-image" src={director.Director.ImageURL}/>
+                    <img alt={`${director.Director.Name}`} className="director-image" src={director.Director.ImageURL}/>
                     <div className="director-container">
                         <div className="director-info">
                             <h1 className="director-view-director">{director.Director.Name}</h1>
@@ -35,6 +35,8 @@ class DirectorView extends Component {
                                 return (
                                         <MovieCard key={movie._id}  movie={movie}/>
                                 )
+                            } else {
+                                return null
                             }
                         })}
                 </div>
