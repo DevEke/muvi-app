@@ -14,7 +14,7 @@ $accent-dark-color: #111518;
 }
 
 body {
-    background-color: white;
+    background-color: $background-color;
 }
 
 @mixin sr-only {

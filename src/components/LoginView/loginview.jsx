@@ -24,8 +24,10 @@ function LoginView(props) {
             Password: password
         }).then((response) => {
             const data = response.data;
+            console.log(data);
             props.onLoggedIn(data)
         }).catch((error) => {
+            props.alert("There was an issue signing you in.");
             // console.log('Username or Password is incorrect.')
         })
         } 

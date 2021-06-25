@@ -35,7 +35,7 @@ class MovieView extends Component {
                     <Link to="/" className="movie-view-flex-start-btn">
                         <button className="movie-view-back-btn">
                             <IoArrowBack className="icon"/>
-                            <p>back</p>
+                            {/* <p>back</p> */}
                         </button>
                     </Link>
                     <div className="movie-info">
@@ -45,7 +45,7 @@ class MovieView extends Component {
                         <p className="movie-view-description">{movie.Description}</p>
                         <button onClick={() => this.addtoFavorites(movie)} className="favorite-btn">
                             <IoHeartOutline className="icon"/>
-                            <p>Add to favorites</p>
+                            {/* <p>Add to favorites</p> */}
                         </button>
                     </div>
                 </div>

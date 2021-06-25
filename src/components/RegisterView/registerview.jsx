@@ -26,15 +26,26 @@ function RegisterView(props) {
             Password: password,
             Email: email
         }).then((response) => {
-            const data = response.data;
-            props.setUser(data.Username);
-            console.log(data.Username);
-            alert('Account Created. Login at the login screen');
-            window.open('/', '_self');
-
+            // const data = response.data;
+            // console.log(data);
+            props.setUser(response.data.Username);
+            // props.onLoggedIn(data)
+            // console.log(data.Username);
+            alert('Account Created.');
         }).catch((error) => {
             console.log(error);
+            props.alert("There was an issue signing you in.");
             // console.log('Error with Registration')
+        });
+        axios.post('https://muvi-app.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        }).then(response => {
+            const data = response.data;
+            props.onLoggedIn(data)
+        }).catch(error => {
+            props.alert("Couldnt you in manually, sign in at the home screen.");
+            // window.open('/', '_self');
         })
         }
         

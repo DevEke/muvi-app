@@ -12,9 +12,10 @@ import DirectorView from '../DirectorView/directorview';
 import GenreView from '../GenreView/genreview';
 import ProfileView from '../ProfileView/profileview';
 import UpdateView from '../UpdateView/updateview';
-import { IoPersonCircleOutline, IoAlertCircleOutline } from 'react-icons/io5';
+import { IoPersonCircleOutline } from 'react-icons/io5';
 import logo from '../../img/logo.svg';
 import './mainview.scss';
+import Alert from '../Alert/alert';
 
 
 
@@ -78,13 +79,7 @@ class MainView extends Component {
         return (
             <Router>
                 <div className="main-view">
-                    {alertMessage !== "" ? 
-                    <div onClick={() => this.setAlert('')} className="alert-modal">
-                        <p>{alertMessage}</p>
-                        <IoAlertCircleOutline className="icon"/>
-                    </div> : 
-                    null
-                    }            
+                    { alertMessage !== "" ? <Alert closemodal={() => this.setAlert('')} message={alertMessage}/> : null }            
                     <div className="nav">
                         <img src={logo} alt="site logo"/>
                         <div className="nav-button-flex"> 
@@ -98,12 +93,12 @@ class MainView extends Component {
                     </div>
                     <div className="movie-grid">
                         <Route exact path="/" render={() => 
-                            { if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)}/>;
+                            { if (!user) return <LoginView alert={x => this.setAlert(x)} onLoggedIn={user => this.onLoggedIn(user)}/>;
                             return <MoviesList movies={movies}/>;
                             }
                         }/>
                         <Route path="/movies/:movieId" render={({match}) => <MovieView alert={x => this.setAlert(x)} movie={movies.find(movie => movie._id === match.params.movieId)}/>}/>
-                        <Route path="/register" render={() => <RegisterView onLoggedIn={user => this.onLoggedIn(user)} />}/>
+                        <Route path="/register" render={() => <RegisterView alert={x => this.setAlert(x)} onLoggedIn={user => this.onLoggedIn(user)} />}/>
                         <Route path="/directors/:name" render={({match}) => { 
                             if (!movies) return <div className="main-view"/>;
                             return <DirectorView director={movies.find(movie => movie.Director.Name === match.params.name)} movies={movies}/>}}

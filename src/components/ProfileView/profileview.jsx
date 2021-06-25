@@ -14,7 +14,8 @@ class ProfileView extends Component {
             username: "",
             password: "",
             email: "",
-            favoriteMovies: []
+            favoriteMovies: [],
+            confirmDelete: '',
         }
     }
 
@@ -43,6 +44,7 @@ class ProfileView extends Component {
 
     // Removes user from the database
     unRegister() {
+        
         let token = localStorage.getItem("token");
         let user = localStorage.getItem("user");
         let url = "https://muvi-app.herokuapp.com/users/" + user;
@@ -55,7 +57,7 @@ class ProfileView extends Component {
             // alert("Account successfully unregistered. Returning to Login Screen.");
         }).catch((error) => {
             // console.log("Account could not be deleted");
-            this.props.alert("Account could not be deleted");
+            this.props.alert("Account could not be deleted!");
         });
     }
 
